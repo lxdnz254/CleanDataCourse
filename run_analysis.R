@@ -9,6 +9,7 @@
 # install packages, libraries, check working diretory and set
 
 install.packages(c("downloader", "dplyr", "tidyr", "stringr"))
+library(data.table)
 library(plyr)
 library(dplyr)
 library(tidyr)
@@ -36,28 +37,27 @@ subject_test <- read.table("./UCI HAR Dataset/test/subject_test.txt", quote="\""
 
 # combine raw data to one data set, extracting mean & std columns
 
-data_X <- tbl_df(rbind(X_test, X_train))
-data_Y <- tbl_df(rbind(y_test, y_train))
-data_Z <- tbl_df(rbind(subject_test, subject_train))
+data_X <- data.table(rbind(X_test, X_train))
+data_Y <- data.table(rbind(y_test, y_train))
+data_Z <- data.table(rbind(subject_test, subject_train))
 data_Y <- cbind(data_Z, data_Y)
 
 # name columns and extract means & stds
 
-colnames(data_X) <- as.character(make.names(features$V2, unique = TRUE))
-colnames(data_Y) <- c("subject", "activity")
+setnames(data_X, 1:561, as.character(make.names(features$V2, unique = TRUE)))
+setnames(data_Y, 1:2, c("subject", "activity"))
 data_XM <- select(data_X, contains("mean.."), contains("std.."), -contains("angle."))
 data_XY <- cbind(data_Y, data_XM)
 
 # order by subject doing activities and return the mean of activity for that subject 
 
-agmean <- data.frame()
+agmean <- data.table()
 for (i in 1:30){
         agsplit <- subset(data_XY, subject == i)
         agtest <- aggregate(agsplit, by=list(agsplit$activity), mean)
         agtest <- agtest[,-1]
         agmean <- rbind(agmean, agtest)
 }
-agmean <- tbl_df(agmean)
 
 # Name, make lower case and remove "_" from activities 
 activity_labels$V2 <- tolower(activity_labels$V2) %>%
@@ -124,7 +124,7 @@ columnlist <- tolower(columnlist) %>%
 
 # put column list back into data.frame "agmean"
         
-colnames(agmean) <- columnlist
+setnames(agmean, 1:68, columnlist)
 
 # write data.frame(agmean) to .txt file
 
