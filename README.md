@@ -1,6 +1,20 @@
 Getting and Cleaning Data Course Project
 ========================================
 
+
+run_analysis.R file was created using R version 3.1.2
+using Platform : x86_64-w64-mingw32/x64 (64-bit)
+
+It uses the packages
+* downloader
+* plyr
+* dplyr
+* tidyr
+* stringr
+
+the script will download and install latest packages for you.
+
+
 Download the run_analysis.R file and open in your R console
 
 run_analysis.R will check your working directory and ensure its set
