@@ -1,6 +1,3 @@
----
-output: word_document
----
 # CodeBook for data table contained in "tidydata.txt"
 
 
@@ -10,11 +7,11 @@ This code book is divided into 3 sections
 * 2. Summary choices
 * 3. Codebook
 
-Study design will explain how the raw data was collected, compiled and tidied
-Summary choices will detail the final output summary and how we came to arrive there
-Codebook will list the variables in the data table and give a description of them
+Study design will explain how the raw data was collected, compiled and tidied.
+Summary choices will detail the final output summary and how we came to arrive there.
+Codebook will list the variables in the data table and give a description of them.
 
-* ## 1. Study Design
+## 1. Study Design
  
 
 Using the run_analysis.R script the data is downloaded from its storage location 
