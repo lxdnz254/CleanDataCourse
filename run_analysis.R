@@ -122,11 +122,11 @@ columnlist <- tolower(columnlist) %>%
         str_replace_all("[[:punct:]]", "")
         
 
-# put column list back into data.frame "agmean"
+# put column list back into data.table "agmean"
         
 setnames(agmean, 1:68, columnlist)
 
-# write data.frame(agmean) to .txt file
+# write data.table(agmean) to .txt file
 
 write.table(agmean, "tidydata.txt", row.names = FALSE)
 

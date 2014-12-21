@@ -21,7 +21,7 @@ Download the run_analysis.R file and open in your R console
 run_analysis.R will check your working directory and ensure its set
 or stop with an error if one is not set.
 It will then download and install the packages "downloader", "tidyr",
-"stringr", "dplyr", & "plyr" for use in this script.
+"stringr", "dplyr", "plyr" and "data.table" for use in this script.
 
 Next it will download the raw data from the internet and save as "data.zip"
 in your working directory (file size 59.6MB).
