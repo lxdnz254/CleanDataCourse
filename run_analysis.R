@@ -49,27 +49,18 @@ setnames(data_Y, 1:2, c("subject", "activity"))
 data_XM <- select(data_X, contains("mean.."), contains("std.."), -contains("angle."))
 data_XY <- cbind(data_Y, data_XM)
 
-# order by subject doing activities and return the mean of activity for that subject 
+# Name, make lower case and remove "_" from activities
 
-agmean <- data.table()
-for (i in 1:30){
-        agsplit <- subset(data_XY, subject == i)
-        agtest <- aggregate(agsplit, by=list(agsplit$activity), mean)
-        agtest <- agtest[,-1]
-        agmean <- rbind(agmean, agtest)
-}
-
-# Name, make lower case and remove "_" from activities 
 activity_labels$V2 <- tolower(activity_labels$V2) %>%
         str_replace_all("[[:punct:]]", "")
 activity <- activity_labels$V2
 oldvalues <- c("1", "2", "3", "4", "5", "6")
 newvalues <- factor(activity)  # Make this a factor
-agmean$activity <- newvalues[ match(agmean$activity, oldvalues) ]
+data_XY$activity <- newvalues[ match(data_XY$activity, oldvalues) ]
 
 # Name Mean Measurements
 
-columnlist <- colnames(agmean) %>%
+columnlist <- colnames(data_XY) %>%
         gsub(pattern = "BodyBody", replacement = "Body") %>% #fix double 'Body'
         gsub(pattern = "X", replacement ="on_the_X_axis") %>%
         gsub(pattern = "Y", replacement ="on_the_Y_axis") %>%
@@ -106,25 +97,30 @@ columnlist <- colnames(agmean) %>%
 quote <- c("Mean_Magnitude_of_", "Standard_Deviation_of_Magnitude_of_",
            "Mean_", "Standard_Deviation_of_")
 for (j in 1:4){
-for (k in 1:68) {
-        report <- as.vector(str_match(columnlist[k], quote[j]))
-        torf <- identical(report, quote[j])
-        if (torf == TRUE) {
-                columnlist[k] <- sub(pattern = quote[j], 
-                                     replacement = "", columnlist[k])
-                columnlist[k] <- paste(quote[j],
-                                       columnlist[k], sep ="")
-}}}
+        for (k in 1:68) {
+                report <- as.vector(str_match(columnlist[k], quote[j]))
+                torf <- identical(report, quote[j])
+                if (torf == TRUE) {
+                        columnlist[k] <- sub(pattern = quote[j], 
+                                             replacement = "", columnlist[k])
+                        columnlist[k] <- paste(quote[j],
+                                               columnlist[k], sep ="")
+                }}}
 
 # Decapitalise all variables and remove "_" to make variables 'tidy'
 
 columnlist <- tolower(columnlist) %>%
         str_replace_all("[[:punct:]]", "")
-        
+
 
 # put column list back into data.table "agmean"
-        
-setnames(agmean, 1:68, columnlist)
+
+setnames(data_XY, 1:68, columnlist)
+
+# order by subject doing activities and return the mean of activity for that subject 
+
+agmean <- group_by(data_XY, subject, activity) %>%
+        summarise_each(funs(mean))
 
 # write data.table(agmean) to .txt file
 

@@ -51,8 +51,8 @@ data_XM <- select(data_X, contains("mean.."), contains("std.."), -contains("angl
 2. Then subsetting the resulting data into subject groups and obtaining the mean of each activity.
 
 + ```
-agsplit <- subset(data_XY, subject == i)
-agtest <- aggregate(agsplit, by=list(agsplit$activity), mean)
+agmean <- group_by(data_XY, subject, activity) %>%
+        summarise_each(funs(mean))
 ```
 
 To complete the summary and tidy the data run_analysis also performs a removal of "_" from the variables and puts all variables into lower case
@@ -71,7 +71,7 @@ it also replaces the values in the activity column with their approriate label a
 activity <- activity_labels$V2
 oldvalues <- c("1", "2", "3", "4", "5", "6")
 newvalues <- factor(activity)  # Make this a factor
-agmean$activity <- newvalues[ match(agmean$activity, oldvalues) ]
+data_XY$activity <- newvalues[ match(data_XY$activity, oldvalues) ]
 ```
 
 To make the variables human readable various gsub routines were placed on the coloumn name variables based on their raw data name to come up with a readable character string

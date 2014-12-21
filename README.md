@@ -36,3 +36,10 @@ performed by each subject.
 The tidy data table will be written to the working directory as "tidydata.txt"
 using write.table() as the function.
 
+More detail on the scripts used can be found in CodeBook.md
+
+to open the "tidydata.txt" data table use 
+```
+data <- read.table("tidydata.txt", header = TRUE, row.name = FALSE)
+```
+A copy of the tidydata.txt file has been left in this repository to match against.
