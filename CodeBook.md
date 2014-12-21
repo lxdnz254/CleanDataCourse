@@ -109,11 +109,11 @@ For more information on how the raw data figures were obtained see the features_
 
 8. meantimegravityacceleratedonthezaxis <- the average of the mean amount of time, with gravity removed acceleration on the z axis
 
-9. meantimebodyjerkedonthexaxis <- the average of the mean time the body jerked on the x axis
+9. meantimebodyjerkedonthexaxis <- the average of the mean time the smartphone accelerometer was jerked on the x axis
 
-10. meantimebodyjerkedontheyaxis <- the average of the mean time the body jerked on the y axis
+10. meantimebodyjerkedontheyaxis <- the average of the mean time the smartphone accelerometer jerked on the y axis
 
-11. meantimebodyjerkedonthezaxis <- the average of the mean time the body jerked on the z axis
+11. meantimebodyjerkedonthezaxis <- the average of the mean time the smartphone accelerometer jerked on the z axis
 
 12. meantimebodymovedgyroscopeonthexaxis <- the average of the mean time the gyroscope moved on x axis
 
@@ -130,3 +130,102 @@ For more information on how the raw data figures were obtained see the features_
 18. meanmagnitudeoftimebodyacceleratedacrossallaxis <- the average of the mean magnitude of time of total acceleration in any direction
 
 19. meanmagnitudeoftimegravityacceleratedacrossallaxis <- the average of the mean magnitude of time, with gravity removed acceleration in any direction
+
+20. meanmagnitudeoftimebodyjerkedacrossallaxis <- the average of the mean magnitude of time the smartphone was jerked in any direction
+
+21. meanmagnitudeoftimebodymovedgyroscopeacrossallaxis <- the average of the mean magnitude of time the gyroscope moved in any direction
+
+22. meanmagnitudeoftimebodyjerkedgyroscopeacrossallaxis <- the average of the mean magnitude of time the gyroscope was jerked in any direction
+
+23. meanfrequencydomainofbodyacceleratedonthexaxis <- the average of the mean frequency domain of total acceleration on the x axis
+
+24. meanfrequencydomainofbodyacceleratedontheyaxis <- the average of the mean frequency domain of total acceleration on the y axis
+
+25. meanfrequencydomainofbodyacceleratedonthezaxis <- the average of the mean frequency domain of total acceleration on the z axis
+
+26. meanfrequencydomainofbodyjerkedonthexaxis <- the average of the mean frequency domain of total acceleration jerks on the x axis
+
+27. meanfrequencydomainofbodyjerkedontheyaxis <- the average of the mean frequency domain of total acceleration jerks on the y axis
+
+28. meanfrequencydomainofbodyjerkedonthezaxis <- the average of the mean frequency domain of total acceleration jerks on the z axis
+
+29. meanfrequencydomainofbodymovedgyroscopeonthexaxis <- the average of the mean frequency domain of gyroscope movement on the x axis
+
+30. meanfrequencydomainofbodymovedgyroscopeontheyaxis <- the average of the mean frequency domain of gyroscope movement on the y axis
+
+31. meanfrequencydomainofbodymovedgyroscopeonthezaxis <- the average of the mean frequency domain of gyroscope movement on the z axis
+
+32. meanmagnitudeoffrequencydomainofbodyacceleratedacrossallaxis <- the average of the mean magnitude of the frequency domain of total acceleration in any direction
+
+33. meanmagnitudeoffrequencydomainofbodyjerkedacrossallaxis <- the average of the mean magnitude of the frequency domain of total acceleration jerks in any direction
+
+34. meanmagnitudeoffrequencydomainofbodymovedgyroscopeacrossallaxis <- the average of the mean magnitude of the frequency domain of the gyroscope moving in any direction
+
+35. meanmagnitudeoffrequencydomainofbodyjerkedgyroscopeacrossallaxis <- the average of the mean magnitude of the frequency domain of the gyroscope jerking in any direction
+
+36. standarddeviationoftimebodyacceleratedonthexaxis <- the average of the standard deviation of the time of total acceleration on the x axis
+
+37. standarddeviationoftimebodyacceleratedontheyaxis <- the average of the standard deviation of the time of total acceleration on the y axis
+
+38. standarddeviationoftimebodyacceleratedonthezaxis <- the average of the standard deviation of the time of total acceleration on the z axis
+
+39. standarddeviationoftimegravityacceleratedonthexaxis <- the average of the standard deviation of the time of acceleration with gravity removed on the x axis
+
+40. standarddeviationoftimegravityacceleratedontheyaxis <- the average of the standard deviation of the time of acceleration with gravity removed on the y axis
+
+41. standarddeviationoftimegravityacceleratedonthezaxis <- the average of the standard deviation of the time of acceleration with gravity removed on the z axis
+
+42. standarddeviationoftimebodyjerkedonthexaxis <- the average of the standard deviation of the time of acceleration jerks on the x axis
+
+43. standarddeviationoftimebodyjerkedontheyaxis <- the average of the standard deviation of the time of acceleration jerks on the y axis
+
+44. standarddeviationoftimebodyjerkedonthezaxis <- the average of the standard deviation of the time of acceleration jerks on the z axis
+
+45. standarddeviationoftimebodymovedgyroscopeonthexaxis <- the average of the standard deviation of the time of the gyroscope moving on the x axis
+
+46. standarddeviationoftimebodymovedgyroscopeontheyaxis <- the average of the standard deviation of the time of the gyroscope moving on the y axis
+
+47. standarddeviationoftimebodymovedgyroscopeonthezaxis <- the average of the standard deviation of the time of the gyroscope moving on the z axis
+
+48. standarddeviationoftimebodyjerkedgyroscopeonthexaxis <- the average of the standard deviation of the time of the gyroscope jerking on the on the x axis
+
+49. standarddeviationoftimebodyjerkedgyroscopeontheyaxis <- the average of the standard deviation of the time of the gyroscope jerking on the y axis
+
+50. standarddeviationoftimebodyjerkedgyroscopeonthezaxis <- the average of the standard deviation of the time of the gyroscope jerking on the z axis
+
+51. standarddeviationofmagnitudeoftimebodyacceleratedacrossallaxis <- the average of the standard deviation of magnitude of the time of total acceleration in any direction
+
+52. standarddeviationofmagnitudeoftimegravityacceleratedacrossallaxis <- the average of the standard deviation of magnitude of the time of acceleration with gravity removed in any direction
+
+53. standarddeviationofmagnitudeoftimebodyjerkedacrossallaxis <- the average of the standard deviation of magnitude of the time of acceleration that was jerked in any direction
+
+54. standarddeviationofmagnitudeoftimebodymovedgyroscopeacrossallaxis <- the average of the standard deviation of magnitude of the time of the gyroscope moving in any direction
+
+55. standarddeviationofmagnitudeoftimebodyjerkedgyroscopeacrossallaxis <- the average of the standard deviation of magnitude of the time of the gyroscope jerking in any direction
+
+56. standarddeviationoffrequencydomainofbodyacceleratedonthexaxis <- the average of the standard deviation of the frequency domain of total acceleration on the x axis
+
+57. standarddeviationoffrequencydomainofbodyacceleratedontheyaxis <- the average of the standard deviation of the frequency domain of total acceleration on the y axis
+
+58. standarddeviationoffrequencydomainofbodyacceleratedonthezaxis <- the average of the standard deviation of the frequency domain of total acceleration on the z axis
+
+59. standarddeviationoffrequencydomainofbodyjerkedonthexaxis <- the average of the standard deviation of the frequency domain of acceleration jerks on the x axis
+
+60. standarddeviationoffrequencydomainofbodyjerkedontheyaxis <- the average of the standard deviation of the frequency domain of acceleration jerks on the y axis
+
+61. standarddeviationoffrequencydomainofbodyjerkedonthezaxis <- the average of the standard deviation of the frequency domain of acceleration jerks on the z axis
+
+62. standarddeviationoffrequencydomainofbodymovedgyroscopeonthexaxis <- the average of the standard deviation of the frequency domain of the gyrocope moving on the x axis
+
+63. standarddeviationoffrequencydomainofbodymovedgyroscopeontheyaxis <- the average of the standard deviation of the frequency domain of the gyroscope moving on the y axis
+
+64. standarddeviationoffrequencydomainofbodymovedgyroscopeonthezaxis <- the average of the standard deviation of the frequency domain of the gyroscope moving on the z axis
+
+65. standarddeviationofmagnitudeoffrequencydomainofbodyacceleratedacrossallaxis <- the average of the standard deviation of magnitude of the frequency domain of total acceleration in any direction
+
+66. standarddeviationofmagnitudeoffrequencydomainofbodyjerkedacrossallaxis <- the average of the standard deviation of magnitude of the frequency domain of acceleration jerks in any direction
+
+67. standarddeviationofmagnitudeoffrequencydomainofbodymovedgyroscopeacrossallaxis <- the average of the standard deviation of magnitude of the frequency domain of the gyroscope moving in any direction
+
+68. standarddeviationofmagnitudeoffrequencydomainofbodyjerkedgyroscopeacrossallaxis <- the average of the standard deviation of magnitude of the frequency domain of the gyroscope jerking in any direction
+
