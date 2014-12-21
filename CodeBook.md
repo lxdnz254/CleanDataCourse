@@ -43,15 +43,12 @@ The data table "data_XY" contains the mean and standard deviation variables from
 As outlined in the course project instructions step 5 results in producing a tidy data set that contains the average of each variable for each subject and each activity.
 This was obtained by.
 
-1. Subsetting the mean and standard devitation variables from the raw data.
-
-+
+1 - Subsetting the mean and standard devitation variables from the raw data.
 ```
 data_XM <- select(data_X, contains("mean.."), contains("std.."), -contains("angle."))
 ```
-2. Then subsetting the resulting data into subject groups and obtaining the mean of each activity.
 
-+
+2 - Then subsetting the resulting data into subject groups and obtaining the mean of each activity.
 ```
 agmean <- group_by(data_XY, subject, activity) %>%
         summarise_each(funs(mean))
