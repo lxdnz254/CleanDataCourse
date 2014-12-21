@@ -3,7 +3,8 @@ Getting and Cleaning Data Course Project
 
 
 run_analysis.R file was created using R version 3.1.2
-using Platform : x86_64-w64-mingw32/x64 (64-bit)
+
+Using platform : x86_64-w64-mingw32/x64 (64-bit)
 
 It uses the packages
 * downloader
